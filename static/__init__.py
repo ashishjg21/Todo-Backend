@@ -22,7 +22,7 @@ def create_app(test_config=None):
     db.init_app(app)
     migrate.init_app(app, db)
     cors.init_app(app, resource={r"/api/*": {"origins": "*"}})
-
+    
     from static.todoApp import todo_list
 
     app.register_blueprint(todo_list, url_prefix='/api/v1')
